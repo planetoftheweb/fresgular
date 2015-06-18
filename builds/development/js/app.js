@@ -2,7 +2,8 @@
 
 var myApp = angular.module('myApp', [
   'ngRoute',
-  'artistControllers'
+  'artistControllers',
+  'firebase'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider) {

@@ -68,6 +68,7 @@
         "jquery":false,
         "require":false,
         "Mustache":false,
+        "Firebase": false,
         "angular":false
     }        // additional predefined global variables
 }
