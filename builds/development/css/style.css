@@ -202,6 +202,7 @@ a.small {
   border: 1px solid rgba(255,255,255,0.2);
   border-radius: 10px;
   outline: 0;
+  margin-bottom: 10px;
 }
 
 .search .formgroup input {
@@ -306,8 +307,4 @@ a.small {
   width: 40%;
   max-width: 130px;
   border-radius: 20px;
-}
-
-.artistinfo .btn {
-
 }
