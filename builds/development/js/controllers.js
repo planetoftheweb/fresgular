@@ -1,6 +1,6 @@
 "use strict";
 
-var artistControllers = angular.module('artistControllers', []);
+var artistControllers = angular.module('artistControllers', ['ngAnimate']);
 
 artistControllers.controller('ListController', 
 	['$scope', 'GetData', function($scope, GetData) {
