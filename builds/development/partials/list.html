@@ -25,27 +25,30 @@
     </div>
 
     <div class="add" ng-show="showadd">
-      <form ng-submit="onAdd()">
+      <form ng-submit="onAdd()" name="adder">
         <h1>Add Artist</h1>
-    			<label>Name</label>
-    			<input placeholder="Artist Name" ng-model="user.name">
+          <label>Name</label>
+          <input placeholder="Artist Name" ng-model="user.name">
 
-    			<label for="">Reknown</label>
-    			<input placeholder="Reknown" ng-model="user.reknown">
+          <label for="">Reknown</label>
+          <input placeholder="Reknown" ng-model="user.reknown">
 
-    			<label for="">Bio</label>
-    			<textarea placeholder="User bio" ng-model="user.bio"></textarea>
+          <label for="">Bio</label>
+          <textarea placeholder="User bio" ng-model="user.bio"></textarea>
+            
+                <label for="">Image</label>
+                <input type="file" name="imageupload" accept="image/*">
 
-      		<button class="btn" type="submit">Add Artist</button>
+          <button class="btn" type="submit">Add Artist</button>
       </form>
     </div>
 
   </div>
   <ul class="artistlist" ng-show="query">
     <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
-      <a href="#/details/{{artists.indexOf(item)}}"><img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}"></a>
+      <a href="#/details/{{artists.indexOf(item)}}"><img ng-src="{{item.image}}" alt="Photo of {{item.name}}"></a>
         <div class="info">
-          <button class="btn small" id="{{item.$id}}"" ng-click="deleteItem(item.$id)">-</button>
+          <button class="btn small" id="{{item.$id}}" ng-click="deleteItem(item.$id)">-</button>
           <a href="#/details/{{artists.indexOf(item)}}">
             <h2>{{item.name}}</h2>
             <h3>{{item.reknown}}</h3>
