@@ -45,7 +45,9 @@
     <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
       <a href="#/details/{{artists.indexOf(item)}}"><img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}"></a>
         <div class="info">
-          <button class="btn small" id="{{item.$id}}"" ng-click="deleteItem(item.$id)">-</button>
+          <button class="btn small" id="{{item.$id}}""
+          confirmation-needed = "Are you sure you want to delete this?"
+          ng-click="deleteItem(item.$id)">-</button>
           <a href="#/details/{{artists.indexOf(item)}}">
             <h2>{{item.name}}</h2>
             <h3>{{item.reknown}}</h3>
