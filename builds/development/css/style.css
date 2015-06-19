@@ -249,6 +249,11 @@ a.small {
   float: right;
 }
 
+.directory .btn.active {
+  background: #DD4F53;
+}
+
+
 /* Artist List Styles */
 
 .artistlist {
@@ -381,10 +386,10 @@ a.small {
 .tabs .btn:first-of-type {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
-  border-left: 1px solid #1E97C2;
+  border-left: 1px solid rgba(255,255,255,0.3);
 }
 .tabs .btn:last-of-type {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  border-right: 1px solid #105168;
+  border-right: 1px solid rgba(0,0,0,0.3);
 }

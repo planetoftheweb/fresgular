@@ -1,8 +1,8 @@
 <section class="artistpage">
   <div class="directory">
     <div class="tabs">
-      <button class="btn calm small" ng-click="showadd = true; showsearch = false">Add</button>
-      <button class="btn calm small" ng-click="showadd = false; showsearch = true">Search</button>
+      <button class="btn calm small" ng-class="showadd ? 'active' : ''" ng-click="showadd = true; showsearch = false">Add</button>
+      <button class="btn calm small" ng-class="showsearch ? 'active' : ''" ng-click="showadd = false; showsearch = true">Search</button>
     </div>
     <div class="search" ng-show="showsearch">
       <h1>Search Directory</h1>
