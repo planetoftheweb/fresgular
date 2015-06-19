@@ -219,6 +219,12 @@ a.small {
   margin-bottom: 10px;
 }
 
+.directory input.ng-touched.ng-invalid, .directory textarea.ng-touched.ng-invalid {
+  border: 1px solid #D14348;
+  background: rgba(238, 200, 86, 0.5);
+}
+
+
 .directory textarea {
   height: 120px;
 }
@@ -392,4 +398,10 @@ a.small {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-right: 1px solid rgba(0,0,0,0.3);
+}
+
+
+/*buttons*/
+.ng-invalid .btn {
+  background: gray;
 }

@@ -9,14 +9,14 @@ artistControllers.controller('ListController',
     $scope.artistOrder = 'name';
 		var ref = new Firebase(FIREBASE_URL);
 		$scope.showsearch = true;
-		$scope.showadd = false;
+		$scope.showadd = false; 
 
 		$scope.onAdd = function() {
 			ref.push($scope.user);
+			$scope.query = $scope.user.name;
 		};
 
 		$scope.deleteItem = function(deleteID) {
-			console.log(deleteID);
 			var deleteRef = new Firebase(FIREBASE_URL + deleteID);
 			deleteRef.remove();
 		};

@@ -68,7 +68,6 @@
         "jquery":false,
         "require":false,
         "Mustache":false,
-        "myApp":false,
         "Firebase": false,
         "angular":false
     }        // additional predefined global variables

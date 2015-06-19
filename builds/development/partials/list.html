@@ -25,18 +25,34 @@
     </div>
 
     <div class="add" ng-show="showadd">
-      <form ng-submit="onAdd()">
+      <form name="myform"
+        ng-submit="onAdd()"
+        novalidate>
         <h1>Add Artist</h1>
+
     			<label>Name</label>
-    			<input placeholder="Artist Name" ng-model="user.name">
+    			<input name="name" placeholder="Artist Name"
+            ng-model="user.name"  ng-required="true">
+          <p class="error validationerror"
+            ng-show="myform.name.$invalid && myform.name.$touched">
+            Name is required</p>
 
     			<label for="">Reknown</label>
-    			<input placeholder="Reknown" ng-model="user.reknown">
+    			<input name="reknown" placeholder="Reknown"
+          ng-model="user.reknown" ng-required="true">
+          <p class="error validationerror"
+            ng-show="myform.reknown.$invalid && myform.reknown.$touched">
+            Reknown required</p>
+
 
     			<label for="">Bio</label>
-    			<textarea placeholder="User bio" ng-model="user.bio"></textarea>
+    			<textarea name="bio" placeholder="User bio"
+    			 ng-model="user.bio"  ng-required="true"></textarea>
+           <p class="error validationerror"
+             ng-show="myform.bio.$invalid && myform.bio.$touched">
+             Reknown required</p>
 
-      		<button class="btn" type="submit">Add Artist</button>
+      		<button ng-disabled="myform.$invalid" class="btn" type="submit">Add Artist</button>
       </form>
     </div>
 
