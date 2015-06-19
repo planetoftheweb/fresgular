@@ -1,35 +1,56 @@
 <section class="artistpage">
-  <div class="search">
-    <h1>Artist Directory</h1>
-    <label>search: </label>
-    <input ng-model="query" placeholder="Search for artists" autofocus>
+  <div class="directory">
+    <div class="tabs">
+      <button class="btn calm small" ng-click="showadd = true; showsearch = false">Add</button>
+      <button class="btn calm small" ng-click="showadd = false; showsearch = true">Search</button>
+    </div>
+    <div class="search" ng-show="showsearch">
+      <h1>Search Directory</h1>
+      <label>search: </label>
+      <input ng-model="query" placeholder="Search for artists" autofocus>
 
-    <label class="formgroup">by:
-      <select ng-model="artistOrder">
-        <option value="name">Name</option>
-        <option value="reknown">Reknown</option>
-      </select>
-    </label>
+      <label class="formgroup">by:
+        <select ng-model="artistOrder">
+          <option value="name">Name</option>
+          <option value="reknown">Reknown</option>
+        </select>
+      </label>
 
-    <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" checked>
-      ascending
-     </label>
-    <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" value="reverse">
-      descending
-    </label>
-   
+      <label class="formgroup">ascending</label>
+        <input type="radio" ng-model="direction" name="direction" checked>
+      <label class="formgroup">
+        <input type="radio" ng-model="direction" name="direction" value="reverse">
+        descending
+      </label>
+    </div>
+
+    <div class="add" ng-show="showadd">
+      <form ng-submit="onAdd()">
+        <h1>Add Artist</h1>
+    			<label>Name</label>
+    			<input placeholder="Artist Name" ng-model="user.name">
+
+    			<label for="">Reknown</label>
+    			<input placeholder="Reknown" ng-model="user.reknown">
+
+    			<label for="">Bio</label>
+    			<textarea placeholder="User bio" ng-model="user.bio"></textarea>
+
+      		<button class="btn" type="submit">Add Artist</button>
+      </form>
+    </div>
+
   </div>
   <ul class="artistlist" ng-show="query">
     <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
-      <a href="#/details/{{artists.indexOf(item)}}">
-        <img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">
+      <a href="#/details/{{artists.indexOf(item)}}"><img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}"></a>
         <div class="info">
-          <h2>{{item.name}}</h2>
-          <h3>{{item.reknown}}</h3>
+          <button class="btn small" id="{{item.$id}}"" ng-click="deleteItem(item.$id)">-</button>
+          <a href="#/details/{{artists.indexOf(item)}}">
+            <h2>{{item.name}}</h2>
+            <h3>{{item.reknown}}</h3>
+          </a>
         </div>
-      </a>
     </li>
-  </ul>  
+  </ul>
 </section>

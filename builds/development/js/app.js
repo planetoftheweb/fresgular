@@ -4,7 +4,7 @@ var myApp = angular.module('myApp', [
   'ngRoute',
   'artistControllers',
   'firebase'
-]).constant('FIREBASE_URL', 'https://artists.firebaseio.com');
+]).constant('FIREBASE_URL', 'https://artists.firebaseio.com/');
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.

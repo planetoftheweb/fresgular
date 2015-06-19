@@ -1,4 +1,4 @@
-/* @override 
+/* @override
   http://planetoftheweb.com/_/css/styles.css */
 
 @import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900|Droid+Sans:400,700");
@@ -72,10 +72,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 html {
-  background-color: #023E54; 
-  background-image: url(images/fallback-gradient.png); 
+  background-color: #023E54;
+  background-image: url(images/fallback-gradient.png);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#023E54), to(#10AAC0));
-  background-image: -webkit-linear-gradient(top, #023E54, #10AAC0); 
+  background-image: -webkit-linear-gradient(top, #023E54, #10AAC0);
   background-image: -moz-linear-gradient(top, #023E54, #10AAC0);
   background-image: -o-linear-gradient(top, #023E54, #10AAC0);
   min-height: 100%;
@@ -104,18 +104,18 @@ a {
 
 h1{
   color: #145266;
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 100%;
   margin-bottom: 10px;
 }
 
-h2{ 
+h2{
   font-size: 1.5rem;
   line-height: 90%;
   color: #c61c6f;
 }
 
-h3{ 
+h3{
   margin-top: 0;
   color: #bd3613;
   line-height: 110%;
@@ -135,9 +135,9 @@ a.small {
 }
 
 
-/* Search Styles */
+/* Directory Styles */
 
-.search {
+.directory {
   background: #063642;
   color: #EEE8D5;
   width: 90%;
@@ -150,7 +150,7 @@ a.small {
   z-index: 20;
 }
 
-.search h1 {
+.directory h1 {
   color: #EEE8D5;
 }
 
@@ -167,8 +167,9 @@ a.small {
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: 4px;
-    background: #C61C6F;
+    background: #DD4F53;
     color: #FCF4DC;
+    outline: none;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -186,13 +187,26 @@ a.small {
 
 .btn:hover {
     background: #09576D;
+    background-color: #EEC856;
 }
 
-.search label {
+.btn.small {
+  padding: 2px 12px;
+}
+
+.btn.calm {
+  background: #1B7998;
+}
+
+.directory {
+  overflow: auto;
+}
+
+.directory label {
   display: none;
 }
 
-.search input {
+.directory input, .directory textarea {
   font-family: 'Droid Sans', sans-serif;
   width: 100%;
   padding: 10px 0 10px 15px;
@@ -205,18 +219,22 @@ a.small {
   margin-bottom: 10px;
 }
 
-.search .formgroup input {
+.directory textarea {
+  height: 120px;
+}
+
+.directory input[type=radio] {
   border: 1px solid rgba(0,0,0,0.3);
   display: inline;
-  width: auto;
+  width: auto !important;
 }
 
-.search label.formgroup {
+.directory label.formgroup {
   display: inline;
   width: auto;
 }
 
-.search select {
+.directory select {
   display: inline;
   padding: 10px 0 10px 15px;
   font-size: 1rem;
@@ -225,6 +243,10 @@ a.small {
   border: 1px solid rgba(0,0,0,0.3);
   border-radius: 10px;
   outline: 0;
+}
+
+.directory .btn {
+  float: right;
 }
 
 /* Artist List Styles */
@@ -239,6 +261,11 @@ a.small {
   border-radius: 0 0 20px 20px;
   opacity: .95;
   z-index: 10;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+
 }
 
 .artistlist ul {
@@ -252,19 +279,11 @@ a.small {
   padding: 10px 10px 0 10px;
   border-bottom: 1px dotted black;
   opacity: .9;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
 }
 
 .artistlist a {
   display: block;
   text-decoration: none;
-}
-
-.artistlist li:hover {
-  background: #FDF6E3;
 }
 
 .artist img {
@@ -275,6 +294,23 @@ a.small {
   border-radius: 12px;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+
+.artist .btn {
+  display: none;
+  float: right;
+  margin-left: 10px;
+  padding: 0 12px;
+}
+
+
+.artistlist li:hover {
+  background: #FDF6E3;
+}
+
+.artistlist li:hover .btn {
+  display: block;
 }
 
 .artist info {
@@ -326,4 +362,20 @@ a.small {
   opacity: 0;
   height: 0;
   overflow: hidden;
+}
+
+.tabs .btn:hover {
+  background-color: #EEC856;
+  color: #093641;
+}
+
+.tabs .btn:first-of-type {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-left: 1px solid #1E97C2;
+}
+.tabs .btn:last-of-type {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: 1px solid #105168;
 }
