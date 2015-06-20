@@ -25,6 +25,8 @@
     </div>
 
     <div class="add" ng-show="showadd">
+
+
       <form name="myform"
         ng-submit="onAdd()"
         novalidate>
@@ -33,6 +35,7 @@
     			<label>Name</label>
     			<input name="name" placeholder="Artist Name"
             ng-model="user.name"  ng-required="true">
+
           <p class="error validationerror"
             ng-show="myform.name.$invalid && myform.name.$touched">
             Name is required</p>
@@ -50,7 +53,7 @@
     			 ng-model="user.bio"  ng-required="true"></textarea>
            <p class="error validationerror"
              ng-show="myform.bio.$invalid && myform.bio.$touched">
-             Reknown required</p>
+             Bio required</p>
 
       		<button ng-disabled="myform.$invalid" class="btn" type="submit">Add Artist</button>
       </form>
