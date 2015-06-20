@@ -12,8 +12,12 @@ artistControllers.controller('ListController',
 		$scope.showadd = false; 
 
 		$scope.onAdd = function() {
-			ref.push($scope.user);
-			$scope.query = $scope.user.name;
+			var imageReader = new FileReader();
+            imageReader.addEventListener('load', function(e){
+              $scope.user.image = e.target.result;
+              ref.push($scope.user);
+            });
+            imageReader.readAsDataURL(document.forms.adder.imageupload.files[0]);
 		};
 
 		$scope.deleteItem = function(deleteID) {
