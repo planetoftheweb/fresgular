@@ -25,10 +25,7 @@
     </div>
 
     <div class="add" ng-show="showadd">
-<<<<<<< HEAD
-
-
-      <form name="myform"
+      <form name="adder"
         ng-submit="onAdd()"
         novalidate>
         <h1>Add Artist</h1>
@@ -48,6 +45,12 @@
             ng-show="myform.reknown.$invalid && myform.reknown.$touched">
             Reknown required</p>
 
+          <label for="">Image</label>
+          <input type="file" name="imageupload" 
+            accept="image/*" ng-required="true">
+           <p class="error validationerror"
+             ng-show="myform.bio.$invalid && myform.bio.$touched">
+             Photo required</p>
 
     			<label for="">Bio</label>
     			<textarea name="bio" placeholder="User bio"
@@ -57,23 +60,6 @@
              Bio required</p>
 
       		<button ng-disabled="myform.$invalid" class="btn" type="submit">Add Artist</button>
-=======
-      <form ng-submit="onAdd()" name="adder">
-        <h1>Add Artist</h1>
-          <label>Name</label>
-          <input placeholder="Artist Name" ng-model="user.name">
-
-          <label for="">Reknown</label>
-          <input placeholder="Reknown" ng-model="user.reknown">
-
-          <label for="">Bio</label>
-          <textarea placeholder="User bio" ng-model="user.bio"></textarea>
-            
-                <label for="">Image</label>
-                <input type="file" name="imageupload" accept="image/*">
-
-          <button class="btn" type="submit">Add Artist</button>
->>>>>>> 12559867498d691253807112cd441cac98f3ca39
       </form>
     </div>
 
@@ -82,13 +68,9 @@
     <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
       <a href="#/details/{{artists.indexOf(item)}}"><img ng-src="{{item.image}}" alt="Photo of {{item.name}}"></a>
         <div class="info">
-<<<<<<< HEAD
           <button class="btn small" id="{{item.$id}}""
           confirmation-needed = "Are you sure you want to delete this?"
           ng-click="deleteItem(item.$id)">-</button>
-=======
-          <button class="btn small" id="{{item.$id}}" ng-click="deleteItem(item.$id)">-</button>
->>>>>>> 12559867498d691253807112cd441cac98f3ca39
           <a href="#/details/{{artists.indexOf(item)}}">
             <h2>{{item.name}}</h2>
             <h3>{{item.reknown}}</h3>
